@@ -8,7 +8,8 @@
     }
   ],
   "scripts": {
-    "build": "node build/glsl2js.js && node node_modules/webpack/bin/webpack.js --mode development --devtool source-map && node node_modules/webpack/bin/webpack.js --mode production && rollup -c ./rollup.config.js --bundleConfigAsCjs",
+    "build": "node build/glsl2js.js && node node_modules/webpack/bin/webpack.js --mode development --devtool source-map && node node_modules/webpack/bin/webpack.js --mode production && npm build:es",
+    "build:es": "rollup -c ./rollup.config.js --bundleConfigAsCjs",
     "dev": "node node_modules/webpack/bin/webpack.js --mode development -w --devtool eval-cheap-module-source-map",
     "prepublish": "node build/glsl2js.js && ./node_modules/.bin/babel src -d lib",
     "release": "npm run prepublish && npm run build"
@@ -41,6 +42,7 @@
     "@babel/plugin-transform-modules-commonjs": "^7.12.1",
     "@rollup/plugin-alias": "^5.1.0",
     "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-replace": "^5.0.5",
     "babel-plugin-module-resolver": "^4.1.0",
     "benchmark": "^2.1.3",
     "case-sensitive-paths-webpack-plugin": "^2.1.1",
