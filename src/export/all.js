@@ -18,3 +18,5 @@ import '../chart/scatterGL';
 import '../chart/graphGL';
 import '../chart/flowGL';
 import '../chart/linesGL';
+
+export * from 'echarts'
