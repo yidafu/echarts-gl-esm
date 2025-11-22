@@ -8,7 +8,7 @@
     }
   ],
   "scripts": {
-    "build": "node build/glsl2js.js && node node_modules/webpack/bin/webpack.js --mode development --devtool source-map && node node_modules/webpack/bin/webpack.js --mode production && npm build:es",
+    "build": "node build/glsl2js.js && node node_modules/webpack/bin/webpack.js --mode development --devtool source-map && node node_modules/webpack/bin/webpack.js --mode production && npm run build:es",
     "build:es": "rollup -c ./rollup.config.js --bundleConfigAsCjs",
     "dev": "node node_modules/webpack/bin/webpack.js --mode development -w --devtool eval-cheap-module-source-map",
     "prepublish": "node build/glsl2js.js && ./node_modules/.bin/babel src -d lib",
